@@ -31,7 +31,7 @@ describe Gecko::Widget do
       it 'should return 1 request objects' do
         update_result = @widget.update
         expect(update_result).to be_a(Array)
-        expect(update_result).to have(1).items
+        expect(update_result.length).to eq(1)
         update_result.each do |result|
           expect(result).to be_a(Gecko::Http::Result)
         end
